@@ -250,17 +250,6 @@
 				"match": "\\\\."
 			  }
 			]
-		  },
-		  {
-			"name": "string.quoted.single.sad",
-			"begin": "'",
-			"end": "'",
-			"patterns": [
-			  {
-				"name": "constant.character.escape.sad",
-				"match": "\\\\."
-			  }
-			]
 		  }
 		]
 	  },
