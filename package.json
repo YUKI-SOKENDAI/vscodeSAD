@@ -6,7 +6,7 @@
     "author": {
         "name": "Yuki Abe",
         "email": "abeyuki@post.kek.jp",
-        "url": ""
+        "url": "hoge"
     },
 	"repository": {
         "type": "git",
@@ -16,7 +16,6 @@
     "engines": {
         "vscode": "^1.18.0"
     },
-	//    "icon": "cern.png",
 	"categories": [
         "Languages"
     ],
@@ -39,7 +38,7 @@
             {
                 "language": "sad",
                 "scopeName": "source.sad",
-                "path": "./sad.tmLanguage.json"
+                "path": "./syntaxes/sad.tmLanguage.json"
             }
         ]
     }
