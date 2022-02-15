@@ -18,7 +18,6 @@
 	  { "include": "#strings" },
 	  { "include": "#block" }
 	],
-	// command sytax rule copied from madx
 	"repository": {
 	  "attributes": {
 		"patterns": [
@@ -30,8 +29,7 @@
 	  "attributes-stringval": {
 		"patterns": [
 		  {
-			//"match": "(?xi)\\b(clist|file|format|halofile|mlist|sectorfile|offsetelem|trueprofile)\\s*(=)\\s*(.+?)\\s*(?=[,;\\s])",
-			"match": "(?xi)\\b(hoge)\\s*(=)\\s*(.+?)\\s*(?=[,;\\s])",
+			"match": "(?xi)\\b(Get|Read|Close|Write|Thread|Map|Apply)\\s*(=)\\s*(.+?)\\s*(?=[,;\\s])",
 			"captures": {
 			  "1": {"name": "variable.other.attribute.sad"},
 			  "2": {"name": "punctuation.sad"},
@@ -43,8 +41,7 @@
 	  "attributes-singular": {
 		"patterns": [
 		  {
-			//"match": "(?xi)\\b(?<!\\.)(bborbit|bunched|cavall|chrom|clear|debug|echo|echomacro|full|info|no_fatal_stop|radiate|rbarc|reset|rmatrix|sympl|tell|thick|thin_foc|threader|trace|truncate|twiss_print|verbose|verify|warn)\\b",
-			"match": "(?xi)\\b(?<!\\.)(moge)\\b",
+			"match": "(?xi)\\b(?<!\\.)(Twiss|LINE|Position|TrackParticle|TransferMatrix|TWAKE|LWAKE|FIT|FREE|FIX|GO)\\b",
 			"name": "variable.other.attribute.sad"
 		  }
 		]
@@ -63,7 +60,7 @@
 	  "functions": {
 		"patterns": [
 		  {
-			"begin": "(?xi)\\b(?<!\\.)(table|tabindex|tabstring|gettab|getidx)(\\s*\\()",
+			"begin": "(?xi)\\b(?<!\\.)(ToString)(\\s*\\()",
 			"beginCaptures": {
 			  "1": {"name": "support.function.sad"},
 			  "2": {"name": "punctuation.sad"}
@@ -137,13 +134,11 @@
 	  "internals": {
 		"patterns": [
 		  {
-			// 2022/02/12 edit	
-			"match": "(?xi)\\b(?<!\\.)(pi|True|False|Infinity|INF|NaN|E|I|Degree|GoldenRatio|EulerGamma)(?!\\.)\\b",
+			"match": "(?xi)\\b(?<!\\.)(Degree|GoldenRatio|I|INF|Infinity|NaN|Pi|SpeedOfLight)(?!\\.)\\b",
 			"name": "constant.language.sad"
 		  },
 		  {
-			//"match": "(?xi)\\b(?<!\\.)(aperture|twiss|beam|summ)\\b",
-			"match": "(?xi)\\b(?<!\\.)(aperture|twiss|beam|summ)\\b",
+			"match": "(?xi)\\b(?<!\\.)(DX|DY|BX|BY|SIGX|SIGY|NX|NY|K[0-9])\\b",
 			"name": "variable.language.internal.sad"
 		  }
 		]
@@ -151,17 +146,15 @@
 	  "keywords": {
 		"patterns": [
 		  {
-			//"match": "(?i)\\b(?<!\\.)(if|elseif|else|while)\\b",
 			"match": "(?i)\\b(?<!\\.)(If|ELSEIF|ELSE|While|Do)\\b",
 			"name": "keyword.control.conditional.sad"
 		  },
-		//   {
-		// 	"match": "(?i)\\b(?<!\\.)(macro)(?=\\s*=)\\b",
-		// 	"name": "keyword.control.macro.sad"
-		//   },
 		  {
-			// "match": "(?i)\\b(?<!\\.)(clear|endedit|endmatch|exit|flatten|quit|reflect|stop|survey|twiss)\\b",
-			"match": "(?i)\\b(?<!\\.)(end|abort|)\\b",
+			"match": "(?i)\\b(?<!\\.)(macro)(?=\\s*=)\\b",
+			"name": "keyword.control.macro.sad"
+		  },
+		  {
+			"match": "(?i)\\b(?<!\\.)(end|abort|Update)\\b",
 			"name": "keyword.control.command.sad"
 		  }
 		]
@@ -191,7 +184,7 @@
 			]
 		  },
 		  {
-			"begin": "(?xi)\\b(?<!\\.)(aperture|assign|beam|call|coguess|constraint|copyfile|clear|create|cycle|delete|dumpsequ|emit|exec|extract|fill|fill_knob|global|gweight|help|install|jacobian|lmdif|makethin|match|migrad|move|option|plot|print|printf|readmytable|readtable|remove|removefile|renamefile|replace|resbeam|resplot|save|savebeta|select|set|setvars|setvars_const|setvars_knob|setvars_lin|seqedit|show|shrink|simplex|sixtrack|sxfread|sxfwrite|survey|system|title|twiss|use|use_macro|write|value|vary|weight)(\\s*[\\,\\s])",
+			"begin": "(?xi)\\b(?<!\\.)(Print)(\\s*[\\,\\s])",
 			"beginCaptures": {
 			  "1": {"name": "keyword.control.sad"},
 			  "2": {"name": "punctuation.sad"}
@@ -233,7 +226,7 @@
 	  "math": {
 		"patterns": [
 		  {
-			"match": "(?xi)\\b(?<!\\.)(sqrt|log|log10|exp|sin|cos|tan|asin|acos|atan|sinh|cosh|tanh|sinc|abs|erf|erfc|floor|ceil|round|frac|ranf|gauss|tgauss)\\b",
+			"match": "(?xi)\\b(?<!\\.)(Statistics|ArcCos|ArcCosh|ArcSin|ArcSinh|ArcTan|ArcTanh|Cos|Cosh|Exp|Sqrt|Tan|Tanh|BesselI|BesselJ|BesselK|BesselY|BesselJZero|Erf|Erfc|Abs|Ceiling|Floor|Max|Min|MinMax|Mod|Negative|Round|Sign|FractionalPart|Det|Eigensystem|IdentityMatrix|Inner|LinearSolve|Outer|SingularValues|Transpose|GaussRandom|Random|SeedRandom)\\b",
 			"name": "support.function.sad"
 		  }
 		]
@@ -244,6 +237,17 @@
 			"name": "string.quoted.double.sad",
 			"begin": "\"",
 			"end": "\"",
+			"patterns": [
+			  {
+				"name": "constant.character.escape.sad",
+				"match": "\\\\."
+			  }
+			]
+		  },
+		  {
+			"name": "string.quoted.single.sad",
+			"begin": "'",
+			"end": "'",
 			"patterns": [
 			  {
 				"name": "constant.character.escape.sad",
@@ -270,7 +274,7 @@
 			}
 		  },
 		  {
-			"match": "\\b(?<!\\.)(true|false)\\b",
+			"match": "\\b(?<!\\.)(True|False)\\b",
 			"captures": {
 			  "1": {"name": "constant.numeric.boolean.sad"}
 			}
@@ -281,12 +285,12 @@
 		"patterns": [
 		  {
 			"begin": "!",
-			"end": "\n",
+			"end": "\\n",
 			"name": "comment.line.sad"
 		  },
 		  {
 			"begin": "!",
-			"end": "\n\r",
+			"end": "\\n\\r",
 			"name": "comment.line.sad"
 		  }
 		]
@@ -298,7 +302,7 @@
 			"name": "storage.modifier.sad"
 		  },
 		  {
-			"match": "(?i)\\b(?<!\\.)(real|int)\\b",
+			"match": "(?i)\\b(?<!\\.)(Real|int)\\b",
 			"name": "storage.type.sad"
 		  }
 		]
