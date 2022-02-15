@@ -1,2 +1,2 @@
 vsce package
-code --install-extension sad-0.0.1.vsix
+rem code --install-extension sad-0.0.2.vsix
