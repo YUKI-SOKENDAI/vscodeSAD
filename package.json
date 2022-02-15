@@ -1,45 +1,48 @@
 {
-    "name": "sad",
-    "displayName": "SAD",
-    "description": "SAD Language",
-	"version": "0.0.1",
-    "author": {
-        "name": "Yuki Abe",
-        "email": "abeyuki@post.kek.jp",
-        "url": "hoge"
-    },
+	"name": "sad",
+	"displayName": "SAD",
+	"description": "SAD Language",
+	"version": "0.0.2",
+	"author": {
+		"name": "Yuki Abe",
+		"email": "abeyuki@post.kek.jp",
+		"url": "https://github.com/YUKI-SOKENDAI"
+	},
 	"repository": {
-        "type": "git",
-        "url": "https://github.com/YUKI-SOKENDAI/vscodeSAD"
-    },
+		"type": "git",
+		"url": "https://github.com/YUKI-SOKENDAI/vscodeSAD"
+	},
 	"publisher": "YUKI-SOKENDAI",
-    "engines": {
-        "vscode": "^1.18.0"
-    },
+	"engines": {
+		"vscode": "^1.18.0"
+	},
 	"categories": [
-        "Languages"
-    ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "sad",
-                "aliases": [
-                    "SAD",
-                    "sad"
-                ],
-                "extensions": [
-                    ".sad",
-                    ".n"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "sad",
-                "scopeName": "source.sad",
-                "path": "./syntaxes/sad.tmLanguage.json"
-            }
-        ]
-    }
+		"Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "sad",
+				"aliases": [
+					"SAD",
+					"sad"
+				],
+				"extensions": [
+					".sad",
+					".n"
+				],
+				"configuration": "./language-conf.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "sad",
+				"scopeName": "source.sad",
+				"path": "./syntaxes/sad.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"installedTimestamp": 1644895482647
+	}
 }
