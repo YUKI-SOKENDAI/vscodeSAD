@@ -7,6 +7,8 @@ If you can, please update litle by litle.
 ## Requirement & Environment
 
 ## Note
+Not recovered all command yet...
+Please help to update this language pack.
 
 ## Author
 * Yuki Abe(abeyuki@post.kek.jp), [SOKENDAI](https://www2.kek.jp/accl/sokendai/) 
