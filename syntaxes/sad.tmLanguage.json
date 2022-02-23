@@ -134,11 +134,11 @@
 	  "internals": {
 		"patterns": [
 		  {
-			"match": "(?xi)\\b(?<!\\.)(Degree|GoldenRatio|I|INF|Infinity|NaN|Pi|SpeedOfLight)(?!\\.)\\b",
+			"match": "(?xi)\\b(?<!\\.)(Degree|GoldenRatio|I|INF|Infinity|NaN|Pi|SpeedOfLight|FORM|TRPT|ins|CALC6D|STACKSIZE|PageWidth)(?!\\.)\\b",
 			"name": "constant.language.sad"
 		  },
 		  {
-			"match": "(?xi)\\b(?<!\\.)(DX|DY|BX|BY|SIGX|SIGY|NX|NY|K[0-9])\\b",
+			"match": "(?xi)\\b(?<!\\.)(EPX|EPY|AX|AY|EX|EY|DX|DY|BX|BY|SIGX|SIGY|NX|NY|K[0-9])\\b",
 			"name": "variable.language.internal.sad"
 		  }
 		]
@@ -146,7 +146,7 @@
 	  "keywords": {
 		"patterns": [
 		  {
-			"match": "(?i)\\b(?<!\\.)(If|ELSEIF|ELSE|While|Do)\\b",
+			"match": "(?i)\\b(?<!\\.)(If|ELSEIF|ELSE|While|Do|Get|Read|read|Close|Write|Thread|Map|Apply|Print|ToString|Twiss|LINE|Position|TrackParticle|TransferMatrix|TWAKE|LWAKE|FFS|FIT|FREE|FIX|GO|TkWait|ListPlot|OpticsPlot|draw|Append|Join|Show|Length|REJECT)\\b",
 			"name": "keyword.control.conditional.sad"
 		  },
 		  {
@@ -226,7 +226,7 @@
 	  "math": {
 		"patterns": [
 		  {
-			"match": "(?xi)\\b(?<!\\.)(Statistics|ArcCos|ArcCosh|ArcSin|ArcSinh|ArcTan|ArcTanh|Cos|Cosh|Exp|Sqrt|Tan|Tanh|BesselI|BesselJ|BesselK|BesselY|BesselJZero|Erf|Erfc|Abs|Ceiling|Floor|Max|Min|MinMax|Mod|Negative|Round|Sign|FractionalPart|Det|Eigensystem|IdentityMatrix|Inner|LinearSolve|Outer|SingularValues|Transpose|GaussRandom|Random|SeedRandom)\\b",
+			"match": "(?xi)\\b(?<!\\.)(Statistics|ArcCos|ArcCosh|ArcSin|ArcSinh|ArcTan|ArcTanh|Cos|Cosh|Exp|Sqrt|Tan|Tanh|BesselI|BesselJ|BesselK|BesselY|BesselJZero|Erf|Erfc|Abs|Ceiling|Floor|Max|Min|MinMax|Mod|Negative|Round|Sign|FractionalPart|Det|Eigensystem|IdentityMatrix|Inner|LinearSolve|Outer|SingularValues|Transpose|GaussRandom|Random|SeedRandom|DiagonalMatrix|Plus)\\b",
 			"name": "support.function.sad"
 		  }
 		]
